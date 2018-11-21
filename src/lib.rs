@@ -1,7 +1,8 @@
 pub mod run;
 
 use std::io::{self, Write};
-use self::run::Run;
+use std::borrow::Cow;
+use self::run::{Cmd, Built};
 
 #[derive(Default, Clone)]
 pub struct Shell {
@@ -32,7 +33,7 @@ impl Shell {
 }
 
 
-impl Run for Shell {
+impl Built for Shell {
     fn name_change(&mut self, name: &str) {
         let prompt = String::from(name);
 //        prompt.push_str(" $: ");
@@ -52,4 +53,16 @@ pub fn print_prompt(input: &str){
     let mut handle = stdout.lock();
 
     handle.write(input.as_bytes()).expect("whoops");
+ }
+
+pub fn tokenize<'a, T>(input : T) -> Vec<String>
+where T :  Into<Cow<'a, str>>
+{
+
+    let val = input.into();
+    let tok  = val
+        .split_whitespace()
+        .map(|x| x.to_owned())
+        .collect();
+    tok
 }
