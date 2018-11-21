@@ -43,15 +43,13 @@ impl Run for Shell {
 pub fn print_ps1(name: &str) {
     let mut prompt = name.to_owned();
     prompt.push_str(" $: ");
-  print_prompt(&prompt).expect("Faied");
+    print_prompt(&prompt);
     io::stdout().flush().unwrap();
 }
 
-pub fn print_prompt(input: &str) -> io::Result<()> {
+pub fn print_prompt(input: &str){
     let stdout = io::stdout();
     let mut handle = stdout.lock();
 
-    handle.write(input.as_bytes())?;
-
-    Ok(())
+    handle.write(input.as_bytes()).expect("whoops");
 }
