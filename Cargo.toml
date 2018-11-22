@@ -1,0 +1,12 @@
+[package]
+name = "shell"
+version = "0.1.0"
+authors = ["Martin Smith <msmith3dart@icloud.com>"]
+edition = "2018"
+
+[dependencies]
+
+
+[[bin]]
+name = "fairshell"
+path = "./src/bin/main.rs"
