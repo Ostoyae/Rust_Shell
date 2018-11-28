@@ -29,39 +29,53 @@ impl Shell {
             println!();
         }
     }
+
+    // Todo: have run cmd look through Paths.
+    pub fn run_cmd(&mut self, tokens: &[String]) -> Result<(), ()> {
+        //     unimplemented!()
+        match tokens[0].as_ref() {
+            "nc" => {
+                self.name_change(tokens[1].as_ref());
+            }
+            "place" => {
+                unimplemented!();
+            }
+            _ => return Err(())
+        }
+        Ok(())
+    }
+
+    //Todo: add set env
+    pub fn run_built(&mut self, tokens: Vec<String>) ->  Result<(), ()> {
+        match tokens[0].as_ref() {
+            "exit" => self.exit(tokens),
+            "cd" => Self::cd(&tokens),
+            "env" => Self::env(),
+            _ => return Err(())
+        }
+        Ok(())
+    }
 }
 
 impl Cmd for Shell {
-    fn run_cmd(&mut self, tokens: Vec<String>) {
-        unimplemented!()
-//        match tokens[0].as_ref() {
-//            "nc" => self.name_change(tokens[1].as_ref()),
-//            _ => {},
-//        }
-    }
-
+    // TODO: change env var ps1
     fn name_change(&mut self, name: &str) {
         let prompt = String::from(name);
-        //        prompt.push_str(" $: ");
         self.name = prompt;
     }
 }
 
 impl BltIn for Shell {
-    fn run_built(&mut self, tokens: Vec<String>) {
-        match tokens[0].as_ref() {
-            "exit" => Self::exit(tokens),
-            "cd" => Self::cd(tokens),
-            "env" => Self::env(),
-            _ => ()
+    fn exit(&mut self, tokens: Vec<String>) {
+        unsafe {
+            self.input = std::mem::uninitialized();
+            self.name = std::mem::uninitialized();
         }
-    }
-
-    fn exit(tokens: Vec<String>) {
+        std::mem::drop(tokens);
         std::process::exit(0);
     }
 
-    fn cd(tokens: Vec<String>) {
+    fn cd(_tokens: &[String]) {
         unimplemented!()
     }
 
@@ -70,22 +84,22 @@ impl BltIn for Shell {
     }
 }
 
+pub fn print_ps1(name: &str) {
+    let mut prompt = name.to_owned();
+    prompt.push_str(" $: ");
+    print_prompt(&prompt);
+    io::stdout().flush().unwrap();
+}
 
-    pub fn print_ps1(name: &str) {
-        let mut prompt = name.to_owned();
-        prompt.push_str(" $: ");
-        print_prompt(&prompt);
-        io::stdout().flush().unwrap();
-    }
+// TODO: use env PS1
+pub fn print_prompt(input: &str) {
+    let stdout = io::stdout();
+    let mut handle = stdout.lock();
 
-    pub fn print_prompt(input: &str) {
-        let stdout = io::stdout();
-        let mut handle = stdout.lock();
+    handle.write_all(input.as_bytes()).expect("whoops");
+}
 
-        handle.write(input.as_bytes()).expect("whoops");
-    }
-
-    pub fn tokenize(input: &str) -> Vec<String> {
-        let tok: Vec<String> = input.split_whitespace().map(|x| x.to_owned()).collect();
-        tok
-    }
+pub fn tokenize(input: &str) -> Vec<String> {
+    let tok: Vec<String> = input.split_whitespace().map(|x| x.to_owned()).collect();
+    tok
+}

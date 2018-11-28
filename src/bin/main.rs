@@ -1,7 +1,9 @@
-use shell::{*, run::*};
+use shell::*;
 
 fn main() {
     let mut shell = Shell::new();
+    let error = " is not recognized as an internal or external command,
+operable program or batch file.";
 
     'shell: loop {
         print_ps1(&shell.name);
@@ -17,16 +19,18 @@ fn main() {
             _ => {}
         }
 
-        //        let input = shell.input.to_owned();
+        //Todo: run_cmd
         if !shell.input.is_empty() {
             let tokens = tokenize(&shell.input);
-            if tokens.len() > 1 {
-                shell.run_cmd(tokens);
-            } else {
-                shell.run_built(tokens);
-            }
-            print_prompt(&shell.input);
+            if shell.run_built(tokenize(&shell.input))
+                .is_err() && shell.run_cmd(&tokens)
+                    .is_err() {
+                    // Todo create a function that handles Errors.
+                        print_prompt(&tokens[0]);
+                        print_prompt(&error);
+                    }
             println!();
         }
-    }
+
+    } //end of loop 'shell
 }
