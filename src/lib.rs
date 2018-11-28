@@ -1,18 +1,26 @@
 pub mod run;
 
 use self::run::{BltIn, Cmd};
+use std::collections::HashMap;
 use std::io::{self, Write};
 
 #[derive(Default)]
 pub struct Shell {
     pub name: String,
     pub input: String,
+    pub alias: HashMap<String, String>,
 }
 
 impl Shell {
     pub fn new() -> Shell {
         let mut out = Shell::default();
         out.name = String::from("FerrisShell");
+        if cfg!(unix) {
+            out.alias.insert("ls".to_string(), "ls --color=auto".to_string());
+            out.alias.insert("l".to_string(), "ls -CF".to_string());
+            out.alias.insert("la".to_string(), "ls -A".to_string());
+            out.alias.insert("ll".to_string(), "ls -alF".to_string());
+        }
         out
     }
 
@@ -40,49 +48,23 @@ impl Shell {
             "place" => {
                 unimplemented!();
             }
-            _ => return Err(())
+            _ => return Err(()),
         }
         Ok(())
     }
 
     //Todo: add set env
-    pub fn run_built(&mut self, tokens: Vec<String>) ->  Result<(), ()> {
+    pub fn run_built(&mut self, tokens: Vec<String>) -> Result<(), ()> {
         match tokens[0].as_ref() {
             "exit" => self.exit(tokens),
             "cd" => Self::cd(&tokens),
             "env" => Self::env(),
-            _ => return Err(())
+            _ => return Err(()),
         }
         Ok(())
     }
 }
 
-impl Cmd for Shell {
-    // TODO: change env var ps1
-    fn name_change(&mut self, name: &str) {
-        let prompt = String::from(name);
-        self.name = prompt;
-    }
-}
-
-impl BltIn for Shell {
-    fn exit(&mut self, tokens: Vec<String>) {
-        unsafe {
-            self.input = std::mem::uninitialized();
-            self.name = std::mem::uninitialized();
-        }
-        std::mem::drop(tokens);
-        std::process::exit(0);
-    }
-
-    fn cd(_tokens: &[String]) {
-        unimplemented!()
-    }
-
-    fn env() {
-        unimplemented!()
-    }
-}
 
 pub fn print_ps1(name: &str) {
     let mut prompt = name.to_owned();
