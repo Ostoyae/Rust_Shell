@@ -9,9 +9,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4288687-49f2-4a24-a966-8528143c7aeb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="b4288687-49f2-4a24-a966-8528143c7aeb" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,32 +55,29 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="rs" value="5703" />
-          <entry key="txt" value="183" />
+          <entry key="rs" value="6461" />
+          <entry key="txt" value="715" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="183" />
-          <entry key="Rust" value="5703" />
+          <entry key="PLAIN_TEXT" value="715" />
+          <entry key="Rust" value="6461" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.41695383">
+    <splitter split-orientation="horizontal" split-proportion="0.7735983">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/lib.rs">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-170">
-                  <caret line="47" column="23" selection-start-line="47" selection-start-column="23" selection-end-line="47" selection-end-column="23" />
+                <state relative-caret-position="170">
+                  <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
                   <folding>
-                    <element signature="e#1785#1786#0" expanded="true" />
-                    <element signature="e#1816#1817#0" expanded="true" />
-                    <element signature="e#1832#1833#0" expanded="true" />
-                    <element signature="e#1863#1864#0" expanded="true" />
+                    <element signature="e#240#1791#0" />
                   </folding>
                 </state>
               </provider>
@@ -91,8 +86,16 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/run.rs">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="180">
-                  <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+                <state relative-caret-position="570">
+                  <caret line="45" selection-start-line="45" selection-end-line="45" />
+                  <folding>
+                    <element signature="e#853#854#0" expanded="true" />
+                    <element signature="e#884#885#0" expanded="true" />
+                    <element signature="e#930#931#0" expanded="true" />
+                    <element signature="e#961#962#0" expanded="true" />
+                    <element signature="e#1023#1024#0" expanded="true" />
+                    <element signature="e#1054#1055#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -113,8 +116,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/bin/main.rs">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="520">
-                  <caret line="29" column="24" lean-forward="true" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
+                <state relative-caret-position="540">
+                  <caret line="30" column="10" selection-start-line="30" selection-start-column="10" selection-end-line="30" selection-end-column="10" />
                 </state>
               </provider>
             </entry>
@@ -138,9 +141,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Cargo.toml" />
+        <option value="$PROJECT_DIR$/src/bin/main.rs" />
         <option value="$PROJECT_DIR$/src/run.rs" />
         <option value="$PROJECT_DIR$/src/lib.rs" />
-        <option value="$PROJECT_DIR$/src/bin/main.rs" />
       </list>
     </option>
   </component>
@@ -168,17 +171,6 @@
               <item name="fairshell" type="b2602c69:ProjectViewProjectNode" />
               <item name="fairshell" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="fairshell" type="b2602c69:ProjectViewProjectNode" />
-              <item name="fairshell" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="fairshell" type="b2602c69:ProjectViewProjectNode" />
-              <item name="fairshell" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="bin" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -192,7 +184,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="org.rust.cargo.project.model.PROJECT_DISCOVERY" value="true" />
-    <property name="settings.editor.selected.configurable" value="Docker" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -278,7 +270,7 @@
       <updated>1542822528255</updated>
       <workItem from="1542822531153" duration="41087000" />
       <workItem from="1543287247857" duration="56000" />
-      <workItem from="1543287350478" duration="11551000" />
+      <workItem from="1543287350478" duration="17018000" />
     </task>
     <task id="LOCAL-00001" summary="init shell in rust">
       <created>1542838193155</created>
@@ -315,13 +307,20 @@
       <option name="project" value="LOCAL" />
       <updated>1543367637810</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Shuffling of code&#10;&#10;Add hashMap to Shell struct `Alias` this will as the name implies this will be for aliases.&#10;&#10;Moved:&#10;* move trait and implementation into run.rs this should have been the way of going about imo, this will also make change ti signature less tedious.&#10;&#10;Added:&#10;* Todo's everywhere.&#10;* added trait alias&#10;* added some default alias common to unix shell, will also be used in early test.">
+      <created>1543385788602</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1543385788602</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52694000" />
+    <option name="totallyTimeSpent" value="58161000" />
   </component>
-  <component name="TodoView" selected-index="1">
+  <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />
     </todo-panel>
@@ -332,9 +331,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1728" height="1117" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4948025" weight="0.15628743" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4948025" visible="true" weight="0.15628743" />
       <window_info id="Structure" order="1" sideWeight="0.5051975" side_tool="true" weight="0.15628743" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -353,7 +351,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Cargo" order="3" visible="true" weight="0.13113773" />
+      <window_info anchor="right" id="Cargo" order="3" weight="0.13113773" />
       <window_info anchor="right" id="Database" order="4" weight="0.3299401" />
     </layout>
     <layout-to-restore>
@@ -392,7 +390,8 @@
     <MESSAGE value="Add more traits&#10;clean up some code." />
     <MESSAGE value="testing functions" />
     <MESSAGE value="moved code around." />
-    <option name="LAST_COMMIT_MESSAGE" value="moved code around." />
+    <MESSAGE value="Shuffling of code&#10;&#10;Add hashMap to Shell struct `Alias` this will as the name implies this will be for aliases.&#10;&#10;Moved:&#10;* move trait and implementation into run.rs this should have been the way of going about imo, this will also make change ti signature less tedious.&#10;&#10;Added:&#10;* Todo's everywhere.&#10;* added trait alias&#10;* added some default alias common to unix shell, will also be used in early test." />
+    <option name="LAST_COMMIT_MESSAGE" value="Shuffling of code&#10;&#10;Add hashMap to Shell struct `Alias` this will as the name implies this will be for aliases.&#10;&#10;Moved:&#10;* move trait and implementation into run.rs this should have been the way of going about imo, this will also make change ti signature less tedious.&#10;&#10;Added:&#10;* Todo's everywhere.&#10;* added trait alias&#10;* added some default alias common to unix shell, will also be used in early test." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Cargo.toml">
@@ -402,30 +401,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/bin/main.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="30" column="10" selection-start-line="30" selection-start-column="10" selection-end-line="30" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/run.rs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        <state relative-caret-position="570">
+          <caret line="45" selection-start-line="45" selection-end-line="45" />
+          <folding>
+            <element signature="e#853#854#0" expanded="true" />
+            <element signature="e#884#885#0" expanded="true" />
+            <element signature="e#930#931#0" expanded="true" />
+            <element signature="e#961#962#0" expanded="true" />
+            <element signature="e#1023#1024#0" expanded="true" />
+            <element signature="e#1054#1055#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lib.rs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-170">
-          <caret line="47" column="23" selection-start-line="47" selection-start-column="23" selection-end-line="47" selection-end-column="23" />
+        <state relative-caret-position="170">
+          <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
           <folding>
-            <element signature="e#1785#1786#0" expanded="true" />
-            <element signature="e#1816#1817#0" expanded="true" />
-            <element signature="e#1832#1833#0" expanded="true" />
-            <element signature="e#1863#1864#0" expanded="true" />
+            <element signature="e#240#1791#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bin/main.rs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="29" column="24" lean-forward="true" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
         </state>
       </provider>
     </entry>
