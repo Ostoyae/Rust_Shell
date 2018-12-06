@@ -1,8 +1,9 @@
-pub mod run;
-
 use self::run::{BltIn, Cmd};
 use std::collections::HashMap;
 use std::io::{self, Write};
+
+
+mod run;
 
 #[derive(Default)]
 pub struct Shell {

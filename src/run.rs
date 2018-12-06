@@ -1,11 +1,11 @@
-use crate::Shell;
+use super::Shell;
 
-pub(crate) trait Cmd {
+pub(super) trait Cmd {
     //    fn run_cmd(&mut self, tokens: &Vec<String>);
     fn name_change(&mut self, name: &str);
 }
 
-pub(crate) trait BltIn {
+pub(super) trait BltIn {
     //    fn run_built(&mut self, tokens: Vec<String>);
     fn exit(&mut self, tokens: Vec<String>);
     fn cd(tokens: &[String]);

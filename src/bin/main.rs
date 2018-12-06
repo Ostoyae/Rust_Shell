@@ -1,18 +1,7 @@
 use shell::*;
-use std::collections::HashMap;
 
 fn main() {
     let mut shell = Shell::new();
-    let error = " is not recognized as an internal or external command,
-operable program or batch file.";
-
-    // Alias for Unix's version of ls,
-    //    let mut alias: HashMap<&str, &mut str> =
-    //        [   ("ls", "ls --color=auto"),
-    //            ("l","ls -CF"),
-    //            ("la","ls -A"),
-    //            ("ll", "ls -alF")
-    //        ].iter().clone().collect();
 
     'shell: loop {
         print_ps1(&shell.name);
@@ -33,6 +22,7 @@ operable program or batch file.";
             let tokens = tokenize(&shell.input);
             if shell.run_built(tokenize(&shell.input)).is_err() && shell.run_cmd(&tokens).is_err() {
                 // Todo create a function that handles Errors.
+                let error = " is not recognized as an internal or external command,\noperable program or batch file.";
                 print_prompt(&tokens[0]);
                 print_prompt(&error);
             }
